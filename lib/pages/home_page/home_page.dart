@@ -1,4 +1,5 @@
 import 'package:ecshop_techpit/pages/home_page/home_header.dart';
+import 'package:ecshop_techpit/pages/home_page/item_categories.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,7 +17,12 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const HomeHeader(),
+      body: Column(
+        children: const [
+          HomeHeader(),
+          ItemCategories(),
+        ],
+      ),
     );
   }
 }
