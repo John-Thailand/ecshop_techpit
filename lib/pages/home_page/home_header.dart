@@ -6,24 +6,26 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Welcome, Taro.',
-            style: GoogleFonts.montserrat(
-              fontSize: 28,
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Welcome, Taro.',
+              style: GoogleFonts.montserrat(
+                fontSize: 28,
+              ),
             ),
-          ),
-          Text(
-            'Summer Collection 2022 is now available.',
-            style: GoogleFonts.montserrat(
-              fontSize: 16,
-            ),
-          )
-        ],
+            Text(
+              'Summer Collection 2022 is now available.',
+              style: GoogleFonts.montserrat(
+                fontSize: 16,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
