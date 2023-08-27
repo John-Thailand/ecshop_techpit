@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ItemGrid extends StatelessWidget {
   const ItemGrid({Key? key}) : super(key: key);
@@ -56,18 +55,16 @@ class _ItemCard extends StatelessWidget {
           // // color: Colors.cyan,
           // child: Text('Item $id'),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 2),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 2),
           child: Text(
             'Super Shoes 1',
-            style: GoogleFonts.montserrat(),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 2),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 2),
           child: Text(
             '12800yen',
-            style: GoogleFonts.montserrat(),
           ),
         ),
       ],
