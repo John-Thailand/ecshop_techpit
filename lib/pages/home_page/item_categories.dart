@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ItemCategories extends StatelessWidget {
-  const ItemCategories({Key? key}) : super(key: key);
+  const ItemCategories({super.key});
 
   static const categories = [
     'shoes',
@@ -28,7 +28,7 @@ class ItemCategories extends StatelessWidget {
                     width: 80,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.blue,
+                      color: Theme.of(context).highlightColor,
                     ),
                     child: Center(
                       child: Image.asset(

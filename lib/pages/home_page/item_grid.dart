@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ItemGrid extends StatelessWidget {
-  const ItemGrid({Key? key}) : super(key: key);
+  const ItemGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,37 +34,29 @@ class _ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.width / 2 * 0.8,
-          decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: NetworkImage(
-                    "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80"),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.circular(5),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 4,
-                  spreadRadius: 0.2,
-                  offset: Offset(1, 1),
-                )
-              ]),
-          // alignment: Alignment.center,
-          // // color: Colors.cyan,
-          // child: Text('Item $id'),
-        ),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 2),
-          child: Text(
-            'Super Shoes 1',
+          child: Card(
+            clipBehavior: Clip.hardEdge,
+            elevation: 4,
+            child: Image.network(
+              "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80",
+              fit: BoxFit.cover,
+            ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 2),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 2),
+          child: Text(
+            'Super Shoes 1',
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 2),
           child: Text(
             '12800yen',
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
       ],
