@@ -8,6 +8,7 @@ part 'item.g.dart';
 @freezed
 class Item with _$Item {
   factory Item({
+    required String id,
     required String name,
     required String imageUrl,
     required String description,
