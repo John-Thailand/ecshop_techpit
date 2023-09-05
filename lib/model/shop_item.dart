@@ -1,8 +1,8 @@
 import 'dart:convert' show jsonDecode;
 import 'package:ecshop_techpit/model/category.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecshop_techpit/model/data/item/item.dart';
+import 'package:http/http.dart';
 
 final shopItemIdsForSelectedCategoryProvider = Provider((ref) {
   final AsyncValue<List<Item>> items = ref.watch(shopItemProvider);
@@ -21,8 +21,9 @@ final shopItemForIdProvider = Provider.family((ref, String id) {
 });
 
 final shopItemProvider = FutureProvider((ref) async {
-  final data = await rootBundle.loadString('assets/mock.json');
-  final json = (await jsonDecode(data) as List).cast<Map<String, dynamic>>();
+  final result = await Client().get(Uri.parse(
+      'https://run.mocky.io/v3/37aa65ea-e6f6-4ca3-8e73-a3688499d51f'));
+  final json = (jsonDecode(result.body) as List).cast<Map<String, dynamic>>();
   final items = json.map(Item.fromJson).toList();
   return items;
 });
